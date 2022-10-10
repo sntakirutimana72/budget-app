@@ -19,7 +19,7 @@ To get this program running on your computer,
 
 1. Install **Ruby**
 2. Install **postgres** database engine
-2. Clone the project repository ([link](../))
+2. Clone the project repository ([link](../../))
 
 ### To setup your environment frameworks, run
   ```
@@ -27,17 +27,17 @@ To get this program running on your computer,
   ```
 
 ### To setup both testing and development databases
-  Create a _**.env**_ in the root directory of the app, and then add this
+  Create a _**`.env`**_ file in the root directory of the app, and then add this
   ```
     DATABASE_USER = <USERNAME_THAT_WORKS_WITH_SETUP_POSTGRES_DATABASE>
     DATABASE_PASSWORD = <PASSWORD_ASSOCIATED_WITH_THE_POSTGRES_USERNAME>
   ```
 
-  For Windows users, I've come across weird scenarios where certain routines would result in errors when 
+  I've come across weird scenarios where certain routines would result in errors on Windows platform when 
   they work fine on other platforms. So, I've chosen those that are more likely to succeed.
   ```
     > rake db:create
-    > rake db:migration
+    > rake db:migrate
   ```
 
   For Linux and macOS platforms
