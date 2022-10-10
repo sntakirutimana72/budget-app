@@ -1,24 +1,77 @@
-# README
+# Budget App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The budget app is a personal financial ledger that allows users to keep track of their financial expenditures. It offers confidentiality through user authentication and resource access control protocols.
 
-Things you may want to cover:
 
-* Ruby version
+## Built With
 
-* System dependencies
+- HTML5
+- CSS3
+- tailswind
+- Ruby
+- Rails
+- postgresql
 
-* Configuration
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get this program running on your computer,
 
-* How to run the test suite
+1. Install **Ruby**
+2. Install **postgres** database engine
+2. Clone the project repository ([link](../))
 
-* Services (job queues, cache servers, search engines, etc.)
+### To setup your environment frameworks, run
+  ```
+    $ bundle install
+  ```
 
-* Deployment instructions
+### To setup both testing and development databases
+  Create a _**.env**_ in the root directory of the app, and then add this
+  ```
+    DATABASE_USER = <USERNAME_THAT_WORKS_WITH_SETUP_POSTGRES_DATABASE>
+    DATABASE_PASSWORD = <PASSWORD_ASSOCIATED_WITH_THE_POSTGRES_USERNAME>
+  ```
 
-* ...
+  For Windows users, I've come across weird scenarios where certain routines would result in errors when 
+  they work fine on other platforms. So, I've chosen those that are more likely to succeed.
+  ```
+    > rake db:create
+    > rake db:migration
+  ```
+
+  For Linux and macOS platforms
+  ```
+    $ rake db:prepare
+  ```
+
+### To run local server
+  ```
+    $ rails s
+  ```
+
+
+## Authors
+
+👤 **Steve**
+
+- GitHub: [@sntakirutimana72](https://github.com/sntakirutimana72/)
+- LinkedIn: [steve-ntakirutimana](https://www.linkedin.com/in/steve-ntakirutimana/) 
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Fellow Micronauts
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.

@@ -32,3 +32,12 @@
 
 # Ignore local environment variables
 .env
+
+# Ignore editors config files
+/.vscode/
+/.idea/
+
+# Ignore dependencies
+/vendor/bundle/
+/node_modules/
+package-lock.json
