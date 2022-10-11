@@ -1,0 +1,17 @@
+<section>
+  <h1>Create New Category</h1>
+
+  <%= form_with(model: @category) do |f| %>
+    <div>
+      <%= f.label(:name) %>
+      <%= f.text_field(:name, placeholder: 'Category Name', required: true) %>
+    </div>
+
+    <div>
+      <%= f.label(:icon) %>
+      <%= f.text_field(:icon, placeholder: 'Category Icon') %>
+    </div>
+
+    <%= f.submit('Create') %>
+  <% end %>
+</section>

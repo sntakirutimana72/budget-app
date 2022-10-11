@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.create(name: 'dev', email: 'dev@test.email', password: 'dev@123')
+
+Category.create(name: 'Personal', author: User.first)
+# Category.create(name: 'Dishes', author: User.first)
+Category.create(name: 'Room Decors', author: User.first)
+# Category.create(name: 'Garden', author: User.first)
+# Category.create(name: 'Charity', author: User.first)
+
+Entity.create(name: 'Umbrella', amount: 13.75, author: User.first)
+Entity.create(name: 'Socx', amount: 6.5, author: User.first)
+Entity.create(name: 'hat', amount: 1.75, author: User.first)
+Entity.create(name: 'pens', amount: 13.75, author: User.first)
+Entity.create(name: 'buckets', amount: 5.75, author: User.first)
+
+Categorization.create(category_id: 1, entity_id: 1)
+Categorization.create(category_id: 1, entity_id: 5)
+Categorization.create(category_id: 1, entity_id: 3)
+Categorization.create(category_id: 1, entity_id: 4)
+Categorization.create(category_id: 2, entity_id: 3)
+Categorization.create(category_id: 2, entity_id: 1)
+Categorization.create(category_id: 2, entity_id: 2)
