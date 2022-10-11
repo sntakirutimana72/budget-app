@@ -11,4 +11,26 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
   end
+
+  def create
+    @category = Category.new(create_params)
+    if @category.save
+      redirect_to(categories_path, notice: 'Category created successfully!')
+    else
+      render(
+        :new,
+        status: :unprocessable_entity,
+        alert: @category.errors.objects.first.full_message
+      )
+    end
+  end
+
+  private
+
+  def create_params
+    params
+      .require(:category)
+      .permit(:name, :icon)
+      .merge(author: current_user)
+  end
 end

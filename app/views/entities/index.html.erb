@@ -1,5 +1,5 @@
 <h1>
-  <%= link_to('< back', categories_path) %>
+  <%= render('shared/back') %>
   <%= @category.name %>
   <span>
     <strong>Total Amount:</strong> $<%= @amount || 0 %>
