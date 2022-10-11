@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories, only: %i[index create new] do
-    resources :entities, only: %i[index new create]
+    resources :entities, only: %i[new create index]
   end
 end
