@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe(User, type: :model) do
-  after { User.delete_all }
+  after { described_class.delete_all }
 
   describe('with valid arguments') do
     subject do
@@ -9,6 +9,12 @@ RSpec.describe(User, type: :model) do
     end
 
     it { should be_valid }
+  end
+
+  describe('Associations') do
+    it { should have_many(:entities) }
+
+    it { should have_many(:categories) }
   end
 
   describe('with invalid arguments') do

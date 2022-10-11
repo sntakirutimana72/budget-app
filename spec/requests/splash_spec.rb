@@ -8,8 +8,8 @@ RSpec.describe('Splash Screen', type: :request) do
       expect(response).to have_http_status(:ok)
     end
 
-    it('should render a home/splash view') do
-      expect(response).to render_template(:splash)
+    it('should render a splash/index view') do
+      expect(response).to render_template(:index)
     end
   end
 end
