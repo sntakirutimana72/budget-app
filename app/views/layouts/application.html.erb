@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgetApp</title>
+    <title><%= @app_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <%= render(template: 'layouts/flash') %>
+      
+      <%= yield %>
+    </main>
   </body>
 </html>
