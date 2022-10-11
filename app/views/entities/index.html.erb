@@ -1,0 +1,11 @@
+<h1>
+  <%= link_to('< back', categories_path) %>
+  <%= @category.name %>
+  <span>
+    <strong>Total Amount:</strong> $<%= @amount || 0 %>
+  </span>
+</h1>
+
+<%= render(@entities || 'shared/empty_list') %>
+
+<%= link_to('New Transaction', new_category_entity_path(@category)) %>
