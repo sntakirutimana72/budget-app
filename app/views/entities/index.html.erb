@@ -6,6 +6,12 @@
   </span>
 </h1>
 
-<%= render(@entities || 'shared/empty_list') %>
+<% if @entities.empty? %>
+  <%= render('shared/empty_list') %>
+<% else %>
+  <ul>
+    <%= render(@entities) %>
+  </ul>
+<% end %>
 
 <%= link_to('New Transaction', new_category_entity_path) %>

@@ -17,7 +17,7 @@
 
   <div>
     <%= f.label('Categories') %>
-    <%= f.collection_check_boxes(:category_ids, my_categories_except(category_id), :id, :name) do |b| %>
+    <%= f.collection_check_boxes(:category_ids, my_categories, :id, :name) do |b| %>
       <div>
         <%= b.check_box %>
         <%= b.label %>
@@ -25,5 +25,5 @@
     <% end %>
   </div>
 
-  <%= f.submit('Save') %>
+  <%= f.submit('Create') %>
 <% end %>

@@ -1,7 +1,11 @@
 <h1>List of all categories</h1>
 
-<ul>
-  <%= render(@categories || 'shared/empty_list') %>
-</ul>
+<% if @categories.empty? %>
+  <%= render('shared/empty_list') %>
+<% else %>
+  <ul>
+    <%= render(@categories) %>
+  </ul>
+<% end %>
 
 <%= link_to('New Category', new_category_path) %>
