@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name])
   end
+
+  def authenticate_user!
+    return super if user_signed_in? || devise_controller?
+
+    redirect_to(root_path)
+  end
 end

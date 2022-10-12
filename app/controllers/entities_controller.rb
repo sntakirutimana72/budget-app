@@ -8,7 +8,7 @@ class EntitiesController < ApplicationController
   end
 
   def new
-    if my_categories_except(params[:category_id]).empty?
+    if Category.where(author: current_user).ids.empty?
       redirect_to(
         new_category_path,
         notice: "Can't create transactions without categories"
@@ -16,7 +16,8 @@ class EntitiesController < ApplicationController
     end
 
     @entity = Entity.new
-    render(:new, locals: { category_id: params[:category_id] })
+    category_id = params[:category_id]
+    render(:new, locals: { category_id:, my_categories: my_categories_except(category_id) })
   end
 
   def create
@@ -28,8 +29,7 @@ class EntitiesController < ApplicationController
 
     @entity.categories.push(*Category.where(id: categ_ids))
     redirect_to(
-      category_entities_path(params[:category_id]),
-      notice: 'Transaction created successfully!'
+      category_entities_path(params[:category_id]), notice: 'Transaction created successfully!'
     )
   end
 
