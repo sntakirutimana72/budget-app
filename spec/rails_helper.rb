@@ -2,6 +2,8 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
+require_relative 'support/devise_spec_helpers'
+require_relative 'support/active_record_spec_helpers'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
@@ -33,6 +35,11 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include DeviseSpecHelpers, type: :feature
+  config.include ActiveRecordSpecHelpers, type: :feature
+  config.include ActiveRecordSpecHelpers, type: :request
+  config.include ActiveRecordSpecHelpers, type: :model
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
