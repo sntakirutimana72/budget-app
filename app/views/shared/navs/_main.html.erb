@@ -3,10 +3,10 @@
   <%= stylesheet_link_tag('shared/buttons') %>
 <% end %>
 
-<nav class="top-nav">
+<nav class="top-nav" data-controller="navs">
   <ul class="flex-between">
     <li>
-      <button class="options-btn">
+      <button class="options-btn" data-action="click->navs#toggle">
         <i class="fa-solid fa-bars"></i>
         <%= render('shared/navs/side') %>
       </button>
@@ -15,14 +15,21 @@
       <h2><%= title %></h2>
     </li>
     <li>
-      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="search-btn" data-action="click->navs#toggleSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
     </li>
   </ul>
 
+  <input type="hidden" data-navs-target="for_list" value="<%= load_more %>">
+
   <% if load_more %>
-    <ul class="trans-more">
-      <li>Most recent</li>
-      <li>Most ancient</li>
-    </ul>
+    <div class="trans-more">
+      <button type="button" class="filter-btn filter-on" data-navs-target="desc" data-action="click->navs#descend">Most recent</button>
+      <button type="button" class="filter-btn" data-navs-target="asc" data-action="click->navs#ascend">Most ancient</button>
+    </div>
   <% end %>
+
+  <div class="flex-center search-wrapper hidden" data-navs-target="finder">
+    <input type="text" class="field" data-navs-target="keyword" data-action="change->navs#reset" placeholder="Search keyword">
+    <button type="button" data-action="click->navs#lookup"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
 </nav>

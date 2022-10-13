@@ -1,8 +1,8 @@
 .side-nav {
   z-index: 999;
   position: absolute;
-  left: 2px;
   width: calc(100% - 4px);
+  left: 2px;
 
   --height: 55px;
 
@@ -24,8 +24,4 @@
 
 .side-nav a {
   text-align: left;
-}
-
-.hidden {
-  display: none;
 }

@@ -10,7 +10,7 @@
   <% if @entities.empty? %>
     <%= render('shared/empty_list') %>
   <% else %>
-    <ul class="flex-col">
+    <ul class="flex-col" id="trans_list">
       <%= render(@entities) %>
     </ul>
   <% end %>

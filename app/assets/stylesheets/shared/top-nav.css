@@ -1,6 +1,6 @@
 .top-nav {
   padding: 10px;
-  padding-bottom: 0;
+  padding-bottom: 4px;
   background-color: var(--color-p);
 }
 
@@ -16,13 +16,20 @@
   padding: 10px 0;
 }
 
-.top-nav .trans-more li:first-child {
+.filter-btn {
+  opacity: 0.4;
+}
+
+.filter-btn.filter-on {
+  opacity: 1;
+}
+
+.filter-btn:first-child {
   grid-area: b;
 }
 
-.top-nav .trans-more li:last-child {
+.filter-btn:last-child {
   grid-area: c;
-  opacity: 0.4;
 }
 
 .top-nav h2 {
@@ -34,4 +41,23 @@
   background-color: inherit;
   border: none;
   outline: none;
+}
+
+.search-wrapper {
+  gap: 2px;
+  margin: 8px 0;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: #d8d8d8;
+}
+
+.search-wrapper .field {
+  color: black;
+  border-radius: 6px 0 0 6px;
+}
+
+.search-wrapper button {
+  background-color: var(--color-p);
+  border-radius: 3px 6px 6px 3px;
+  padding: 8px 12px;
 }

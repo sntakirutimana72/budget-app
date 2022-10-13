@@ -8,7 +8,7 @@
   <% if @categories.empty? %>
     <%= render('shared/empty_list') %>
   <% else %>
-    <ul class="flex-col">
+    <ul class="flex-col" id="catego_list">
       <%= render(@categories) %>
     </ul>
   <% end %>
