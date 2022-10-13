@@ -1,0 +1,31 @@
+.side-nav {
+  z-index: 999;
+  position: absolute;
+  left: 2px;
+  width: calc(100% - 4px);
+
+  --height: 55px;
+
+  top: var(--height);
+  height: calc(100vh - var(--height) - 2px);
+  background-color: var(--color-p);
+  animation-name: move;
+  animation-duration: 0.25s;
+}
+
+@keyframes move {
+  from {left: -100%;}
+  to {left: 2px;}
+}
+
+.side-nav > div {
+  padding: 20px 10px;
+}
+
+.side-nav a {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}

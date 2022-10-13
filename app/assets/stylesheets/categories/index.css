@@ -1,0 +1,22 @@
+.ft-categ {
+  gap: 20px;
+}
+
+.categ-item {
+  display: flex;
+  gap: 10px;
+}
+
+.categ-item > div {
+  width: 100%;
+}
+
+.categ-item .flex-between {
+  margin-top: 6px;
+}
+
+.categ-item a {
+  font-size: larger;
+  font-weight: bold;
+  color: var(--color-p);
+}

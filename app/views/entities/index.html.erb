@@ -1,17 +1,19 @@
-<h1>
-  <%= render('shared/back') %>
-  <%= @category.name %>
-  <span>
-    <strong>Total Amount:</strong> $<%= @amount || 0 %>
-  </span>
-</h1>
+<%= render('shared/navs/main', title: 'TRANSACTIONS', load_more: true) %>
 
-<% if @entities.empty? %>
-  <%= render('shared/empty_list') %>
-<% else %>
-  <ul>
-    <%= render(@entities) %>
-  </ul>
-<% end %>
+<section class="flex-col ft-sec ft-trans">
+  <h3 class="flex-between">
+    <%= render('shared/buttons/back', url: categories_path) %>
+    <span><%= @category.name %></span>
+    <span><i>$</i><%= @amount || 0 %></strong></span>
+  </h3>
 
-<%= link_to('New Transaction', new_category_entity_path) %>
+  <% if @entities.empty? %>
+    <%= render('shared/empty_list') %>
+  <% else %>
+    <ul class="flex-col">
+      <%= render(@entities) %>
+    </ul>
+  <% end %>
+</section>
+
+<%= link_to('New Transaction', new_category_entity_path, class: 'new-ft-btn') %>

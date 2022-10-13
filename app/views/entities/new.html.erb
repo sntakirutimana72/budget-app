@@ -1,29 +1,19 @@
-<h1>
-  <%= link_to('< ', category_entities_path(category_id))%>
+<%= render('shared/form', title: 'NEW TRANSACTION', action: 'Create', url_to: category_entities_path(category_id)) %>
 
-  New Transaction
-</h1>
+<section class="new-ft-trans">
+  <%= form_with(model: @entity, url: category_entities_path(category_id), class: 'flex-col devise-form', id: 'devise_user') do |f| %>
+    <%= f.text_field(:name, class: 'field', placeholder: 'name', required: true) %>
+    <span class="spacer"></span>
+    <%= f.number_field(:amount, class: 'field', placeholder: 'amount', min: 0, required: true) %>
 
-<%= form_with(model: @entity, url: category_entities_path(category_id)) do |f| %>
-  <div>
-    <%= f.label(:name) %>
-    <%= f.text_field(:name, placeholder: 'name', required: true) %>
-  </div>
-
-  <div>
-    <%= f.label(:amount) %>
-    <%= f.number_field(:amount, placeholder: 'amount', min: 0, required: true) %>
-  </div>
-
-  <div>
-    <%= f.label('Categories') %>
-    <%= f.collection_check_boxes(:category_ids, my_categories, :id, :name) do |b| %>
-      <div>
-        <%= b.check_box %>
-        <%= b.label %>
-      </div>
-    <% end %>
-  </div>
-
-  <%= f.submit('Create') %>
-<% end %>
+    <div class="categs-list">
+      <%= f.label('Other Categories (Optional)') %>
+      <%= f.collection_check_boxes(:category_ids, my_categories, :id, :name) do |b| %>
+        <div>
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</section>

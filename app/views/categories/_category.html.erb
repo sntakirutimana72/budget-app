@@ -1,16 +1,10 @@
-<li>
+<li class="categ-item ft-item">
+  <%= image_tag(category.icon || '') %>
   <div>
-    <%= image_tag(category.icon || '') %>
-    <div>
-      <%= link_to(category.name, category_entities_path(category)) %>
-      <div>
-        <span>
-          By <strong><%= current_user.name %></strong>
-        </span>
-        <span>
-          Total Transactions Amount: <em>$<%= category.amount %></em>
-        </span>
-      </div>
+    <%= link_to(category.name, category_entities_path(category)) %>
+    <div class="flex-between">
+      <span><%= created_by %></span>
+      <span><%= total_amount(category) %></span>
     </div>
   </div>
 </li>

@@ -1,20 +1,9 @@
+<%= render('shared/form', title: 'NEW CATEGORY', action: 'Create', url_to: categories_path) %>
+
 <section>
-  <h1>
-    <%= render('shared/back') %>
-    Create New Category
-  </h1>
-
-  <%= form_with(model: @category) do |f| %>
-    <div>
-      <%= f.label(:name) %>
-      <%= f.text_field(:name, placeholder: 'Category Name', required: true) %>
-    </div>
-
-    <div>
-      <%= f.label(:icon) %>
-      <%= f.text_field(:icon, placeholder: 'Category Icon', required: true) %>
-    </div>
-
-    <%= f.submit('Create') %>
+  <%= form_with(model: @category, html: { class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>
+    <%= f.text_field(:name, class:'field', placeholder: 'Name', required: true) %>
+    <span class="spacer"></span>
+    <%= f.text_field(:icon, class: 'field', placeholder: 'Icon', required: true) %>
   <% end %>
 </section>

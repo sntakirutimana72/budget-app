@@ -1,6 +1,7 @@
-<div>
-  <h3><%= entity.name %></h3>
-  <div>
-    <span>Amount: $<%= entity.amount %></span>
-  </div>
-</div>
+<li class="trans-item ft-item">
+  <h4 class="flex-between">
+    <span><%= entity.name %></span>
+    <strong><i>$</i><%= entity.amount %></strong>
+  </h4>
+  <p><%= humanize_date(entity) %>
+</li>

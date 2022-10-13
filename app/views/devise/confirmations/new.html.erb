@@ -1,16 +1,14 @@
-<h2>Resend confirmation instructions</h2>
+<%= render('shared/form', title: 'RESEND CONFIRMATION', action: 'Resend', url_to: nil) %>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<section class="flex-col devise-page">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <%= f.email_field :email, class: 'field', placeholder: 'Email', required: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to("Forgot your password?", new_password_path(resource_name)) %>
+  <% end %>
+</section>
 
-<%= render "devise/shared/links" %>

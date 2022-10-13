@@ -1,11 +1,17 @@
-<h1>List of all categories</h1>
-
-<% if @categories.empty? %>
-  <%= render('shared/empty_list') %>
-<% else %>
-  <ul>
-    <%= render(@categories) %>
-  </ul>
+<% content_for(:stylesheets) do %>
+  <%= stylesheet_link_tag('categories/index') %>
 <% end %>
 
-<%= link_to('New Category', new_category_path) %>
+<%= render('shared/navs/main', title: 'CATEGORIES', load_more: nil) %>
+
+<section class="flex-col ft-sec ft-categ">
+  <% if @categories.empty? %>
+    <%= render('shared/empty_list') %>
+  <% else %>
+    <ul class="flex-col">
+      <%= render(@categories) %>
+    </ul>
+  <% end %>
+</section>
+
+<%= link_to('New Category', new_category_path, class: 'new-ft-btn') %>

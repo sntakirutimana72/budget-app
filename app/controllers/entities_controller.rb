@@ -1,6 +1,4 @@
 class EntitiesController < ApplicationController
-  include EntitiesHelper
-
   def index
     @category = Category.find(params[:category_id])
     @entities = @category.entities
@@ -17,7 +15,7 @@ class EntitiesController < ApplicationController
 
     @entity = Entity.new
     category_id = params[:category_id]
-    render(:new, locals: { category_id:, my_categories: my_categories_except(category_id) })
+    render(:new, locals: { category_id:, my_categories: helpers.my_categories_except(category_id) })
   end
 
   def create

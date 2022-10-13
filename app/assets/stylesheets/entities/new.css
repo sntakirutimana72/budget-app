@@ -1,0 +1,15 @@
+.new-ft-trans {
+  padding-top: 20px;
+}
+
+.new-ft-trans .categs-list {
+  padding: 15px 5px;
+}
+
+.categs-list > label {
+  font-weight: 600;
+}
+
+.categs-list > div {
+  padding: 0 5px;
+}

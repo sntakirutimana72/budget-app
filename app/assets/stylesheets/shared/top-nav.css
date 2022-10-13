@@ -1,0 +1,37 @@
+.top-nav {
+  padding: 10px;
+  padding-bottom: 0;
+  background-color: var(--color-p);
+}
+
+.top-nav * {
+  color: var(--bg-primary);
+}
+
+.top-nav .trans-more {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "a b c";
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.top-nav .trans-more li:first-child {
+  grid-area: b;
+}
+
+.top-nav .trans-more li:last-child {
+  grid-area: c;
+  opacity: 0.4;
+}
+
+.top-nav h2 {
+  font-size: medium;
+  font-weight: inherit;
+}
+
+.top-nav button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,28 @@
+<% content_for(:stylesheets) do %>
+  <%= stylesheet_link_tag('shared/top-nav') %>
+  <%= stylesheet_link_tag('shared/buttons') %>
+<% end %>
+
+<nav class="top-nav">
+  <ul class="flex-between">
+    <li>
+      <button class="options-btn">
+        <i class="fa-solid fa-bars"></i>
+        <%= render('shared/navs/side') %>
+      </button>
+    </li>
+    <li>
+      <h2><%= title %></h2>
+    </li>
+    <li>
+      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </li>
+  </ul>
+
+  <% if load_more %>
+    <ul class="trans-more">
+      <li>Most recent</li>
+      <li>Most ancient</li>
+    </ul>
+  <% end %>
+</nav>
