@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     return super if user_signed_in? || devise_controller?
 
-    redirect_to(root_path)
+    redirect_to(get_started_path)
   end
 end

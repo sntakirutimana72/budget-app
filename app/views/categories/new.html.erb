@@ -1,4 +1,4 @@
-<%= render('shared/form', title: 'NEW CATEGORY', action: 'Create', url_to: categories_path) %>
+<%= render('shared/form', title: 'NEW CATEGORY', action: 'Create', url_to: root_path) %>
 
 <section>
   <%= form_with(model: @category, html: { class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>

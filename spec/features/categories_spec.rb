@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe('Categories', type: :feature) do
   describe('without user session') do
-    it('redirects to :root_path') do
-      visit(categories_path)
-      expect(current_path).to eq(root_path)
+    it('redirects to :get_started_path') do
+      visit(root_path)
+      expect(current_path).to eq(get_started_path)
     end
   end
 
@@ -12,7 +12,7 @@ RSpec.describe('Categories', type: :feature) do
     before do
       @user = create_user(email: 'test@email')
       sign_in(@user)
-      visit(categories_path)
+      visit(root_path)
     end
     after do
       sign_out(@user)
@@ -65,11 +65,11 @@ RSpec.describe('Categories', type: :feature) do
 
       it('contains fields') { expect(page).to have_css('[type=text]', count: 2) }
       it('contains :submit button') { expect(page).to have_button('Create') }
-      it('contains a :back button') { expect(page).to have_link('<') }
+      it('contains a :back button') { expect(page).to have_link('') }
 
-      it('when you click on the :back, it leads to :categories_path') do
-        page.click_link('<')
-        expect(current_path).to eq(categories_path)
+      it('when you click on the :back, it leads to :root_path') do
+        page.click_link('')
+        expect(current_path).to eq(root_path)
       end
 
       it('when you click on :submit button, it creates a new category') do
@@ -80,7 +80,7 @@ RSpec.describe('Categories', type: :feature) do
 
         page.click_button('Create')
 
-        expect(current_path).to eq(categories_path)
+        expect(current_path).to eq(root_path)
         expect(page).to have_content('Category created successfully!')
         expect(page).to have_content('cat_form_test')
         expect(exp_counter).to eq(Category.where(author: @user).count)

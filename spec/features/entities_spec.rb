@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe('Entities', type: :feature) do
   describe('without user session') do
-    it('should redirect to root_path') do
-      visit(categories_path)
-      expect(current_path).to eq(root_path)
+    it('should redirect to get_started_path') do
+      visit(root_path)
+      expect(current_path).to eq(get_started_path)
     end
   end
 
@@ -34,8 +34,8 @@ RSpec.describe('Entities', type: :feature) do
 
       page.refresh
 
-      expect(page).to have_css('h3', text: trans1.name)
-      expect(page).to have_css('h3', text: trans2.name)
+      expect(page).to have_css('span', text: trans1.name)
+      expect(page).to have_css('span', text: trans2.name)
     end
 
     it('contains a link to new transaction page') { expect(page).to have_link('New Transaction') }
@@ -45,11 +45,11 @@ RSpec.describe('Entities', type: :feature) do
       expect(current_path).to eq(new_category_entity_path(@categ))
     end
 
-    it('contains a :back button') { expect(page).to have_link('<') }
+    it('contains a :back button') { expect(page).to have_link('') }
 
-    it('when you click on the :back, it leads to :categories_path') do
-      page.click_link('<')
-      expect(current_path).to eq(categories_path)
+    it('when you click on the :back, it leads to :root_path') do
+      page.click_link('')
+      expect(current_path).to eq(root_path)
     end
 
     context('new transaction page') do
@@ -72,7 +72,7 @@ RSpec.describe('Entities', type: :feature) do
 
         expect(current_path).to eq(category_entities_path(@categ))
         expect(page).to have_content('Transaction created successfully!')
-        expect(page).to have_css('h3', text: 'new_transaction_spec_form')
+        expect(page).to have_css('span', text: 'new_transaction_spec_form')
         expect(exp_counter).to eq(@categ.entities.count)
       end
     end

@@ -3,7 +3,7 @@
 <% end %>
 
 <nav class="flex-between top-nav">
-  <%= render('shared/buttons/back', url: url_to || root_path) %>
+  <%= render('shared/buttons/back', url: url_to || get_started_path) %>
 
   <h2><%= title %></h2>
   <button type="submit" form="devise_user"><%= action %></button>

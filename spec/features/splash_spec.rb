@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe('Splash', type: :feature) do
   describe('without user session') do
-    before { visit(root_path) }
+    before { visit(get_started_path) }
 
     it('displays the app title') do
       expect(page).to have_content(ENV.fetch('APP_TITLE'))
@@ -26,8 +26,8 @@ RSpec.describe('Splash', type: :feature) do
 
     it('redirects to categories page') do
       auto_sign_out(create_user(email: 'test@email')) do
-        visit(root_path)
-        expect(current_path).to eq(categories_path)
+        visit(get_started_path)
+        expect(current_path).to eq(root_path)
       end
     end
   end
