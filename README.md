@@ -1,15 +1,21 @@
 # Budget App
 
-The budget app is a personal financial ledger that allows users to keep track of their financial expenditures. It offers confidentiality through user authentication and resource access control protocols.
+The budget app is a personal financial ledger that allows users to keep track of their financial expenditures. It offers confidentiality through user authentication and resource access control protocols. Users are able to add and classify different transactions under different categories based on the nature of the transactions.
+
+
+## Live Version
+
+- [heroku](https://budgesten.herokuapp.com/)
+- [loom-demo](https://loom.com/share/d1cb8d4eadce4225bbe6ee7dceb2f1f8)
 
 
 ## Built With
 
 - HTML5
 - CSS3
-- tailswind
-- Ruby
 - Rails
+- Ruby
+- JavaScript
 - postgresql
 
 
