@@ -1,5 +1,5 @@
 <li class="categ-item ft-item">
-  <%= image_tag(category.icon || '') %>
+  <%= image_tag(get_icon(category.icon)) %>
   <div>
     <%= link_to(category.name, category_entities_path(category)) %>
     <div class="flex-between">
