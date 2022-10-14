@@ -68,5 +68,3 @@ group :test do
   gem 'warden'
   gem 'webdrivers'
 end
-
-gem 'tailwindcss-rails', '~> 2.0'
