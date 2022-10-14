@@ -1,0 +1,13 @@
+<%= render('shared/form', title: 'REGISTER', action: 'Next', url_to: nil) %>
+
+<section class="flex-col devise-page">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= f.text_field :name, class: 'field', placeholder: 'Full name' %>
+    <span class="spacer"></span>
+    <%= f.email_field :email, class: 'field', placeholder: 'Email' %>
+    <span class="spacer"></span>
+    <%= f.password_field :password, class: 'field', placeholder: 'Password' %>
+  <% end %>
+</section>

@@ -1,0 +1,9 @@
+<%= render('shared/form', title: 'NEW CATEGORY', action: 'Create', url_to: root_path) %>
+
+<section>
+  <%= form_with(model: @category, html: { class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>
+    <%= f.text_field(:name, class:'field', placeholder: 'Name', required: true) %>
+    <span class="spacer"></span>
+    <%= f.text_field(:icon, class: 'field', placeholder: 'Icon', required: true) %>
+  <% end %>
+</section>

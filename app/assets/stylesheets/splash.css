@@ -1,0 +1,27 @@
+.splash,
+.title {
+  flex: 1;
+}
+
+.splash {
+  padding: 25px;
+}
+
+.title span {
+  font-size: 50px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.splash a {
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+a.splash-login {
+  color: var(--bg-primary);
+  margin-bottom: 10px;
+  background-color: #3778c2;
+}

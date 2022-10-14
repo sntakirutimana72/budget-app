@@ -1,0 +1,19 @@
+<%= render('shared/navs/main', title: 'TRANSACTIONS', load_more: true) %>
+
+<section class="flex-col ft-sec ft-trans">
+  <h3 class="flex-between">
+    <%= render('shared/buttons/back', url: root_path) %>
+    <span><%= @category.name %></span>
+    <span><i>$</i><%= @amount || 0 %></strong></span>
+  </h3>
+
+  <% if @entities.empty? %>
+    <%= render('shared/empty_list') %>
+  <% else %>
+    <ul class="flex-col" id="trans_list">
+      <%= render(@entities) %>
+    </ul>
+  <% end %>
+</section>
+
+<%= link_to('New Transaction', new_category_entity_path, class: 'new-ft-btn') %>

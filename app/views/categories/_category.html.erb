@@ -1,0 +1,10 @@
+<li class="categ-item ft-item">
+  <%= image_tag(get_icon(category.icon)) %>
+  <div>
+    <%= link_to(category.name, category_entities_path(category)) %>
+    <div class="flex-between">
+      <span><%= created_by %></span>
+      <span><%= total_amount(category) %></span>
+    </div>
+  </div>
+</li>

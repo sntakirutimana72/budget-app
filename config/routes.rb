@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'categories#index'
+  get 'get-started', to: 'splash#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+
+  resources :categories, only: %i[create new] do
+    resources :entities, only: %i[new create index]
+  end
 end

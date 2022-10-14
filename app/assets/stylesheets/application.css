@@ -13,3 +13,127 @@
  *= require_tree .
  *= require_self
  */
+
+/* behance topography variables */
+:root {
+  --bg-primary: #f5f6fa;
+  --color-p: #3778c2;
+  --color-s: #5fb523;
+  --color: #434b54;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 200;
+  color: var(--color);
+}
+
+body,
+h4,
+h3,
+h2,
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  max-width: 768px;
+  margin: 0 auto;
+  border: 2px solid var(--color-p);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  border: 1px solid #e8e8e8;
+}
+
+.field {
+  padding: 8px 10px;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+form .spacer {
+  margin: 0.5px 8px;
+  border: 1px solid #e8e8e8;
+}
+
+.ft-sec {
+  flex: 1;
+}
+
+.ft-sec ul {
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+.ft-item {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.new-ft-btn {
+  font-size: larger;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-s);
+}
+
+.empty-list {
+  margin: auto 0;
+  font-size: 39px;
+  opacity: 0.4;
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+<% content_for(:stylesheets) do %>
+  <%= stylesheet_link_tag('splash') %>
+<% end %>
+
+<section class="flex-col splash">
+  <h2 class="flex-center title">
+    <span><%= @app_title %></span>
+  </h2>
+
+  <%= link_to('LOG IN', new_user_session_path, class: 'splash-login') %>
+
+  <%= link_to('SIGN UP', new_user_registration_path) %>
+<section>

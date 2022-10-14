@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgetApp</title>
+    <title><%= @app_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://use.typekit.net/emv3zbo.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.18/css/arizona-bootstrap.min.css" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= yield(:stylesheets) %>
     <%= javascript_importmap_tags %>
+    <%= yield(:scripts) %>
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <%= render('shared/flash') %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>

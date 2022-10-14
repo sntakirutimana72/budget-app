@@ -1,0 +1,13 @@
+<%= render('shared/form', title: 'LOGIN', action: 'Log In', url_to: nil) %>
+
+<section class="flex-col devise-page">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'flex-col devise-form', id: 'devise_user' }) do |f| %>
+    <%= f.email_field :email, class: 'field', placeholder: 'Email', required: true %>
+    <span class="spacer"></span>
+    <%= f.password_field :password, class: 'field', placeholder: 'Password', required: true %>
+  <% end %>
+
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to("Forgot your password?", new_password_path(resource_name)) %>
+  <% end %>
+</section>
