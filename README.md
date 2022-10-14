@@ -76,6 +76,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 - Fellow Micronauts
 
 ## 📝 License
