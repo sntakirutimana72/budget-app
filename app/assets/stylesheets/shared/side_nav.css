@@ -14,8 +14,13 @@
 }
 
 @keyframes move {
-  from {left: -100%;}
-  to {left: 2px;}
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 2px;
+  }
 }
 
 .side-nav > div {
