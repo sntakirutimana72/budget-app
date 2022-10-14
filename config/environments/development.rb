@@ -52,7 +52,7 @@ Rails.application.configure do
     authentication: :cram_md5
   }
 
-  config.action_mailer.default_url_options = { host: ENV.fetch('LOCAL_HOST') }
+  config.action_mailer.default_url_options = { host: ENV.fetch('BUDGET_APP_LOCAL_HOST') }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

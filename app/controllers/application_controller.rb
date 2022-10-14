@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def load_directives
-    @app_title = ENV.fetch('APP_TITLE')
+    @app_title = ENV.fetch('BUDGET_APP_TITLE', 'BudgetApp')
   end
 
   def configure_permitted_parameters
